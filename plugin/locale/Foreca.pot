@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreca 4.0.0\n"
+"Project-Id-Version: Foreca 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-31 08:00+0200\n"
 "PO-Revision-Date: 2025-01-07 14:32+0200\n"
