@@ -1,758 +1,847 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2025-01-13 16:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: Foreca 4.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-31 08:00+0200\n"
+"PO-Revision-Date: 2025-01-07 14:32+0200\n"
+"Last-Translator: Orlandox\n"
+"Language-Team: \n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ui.py\n"
 
-#: plugin.py:22 plugin.py:29 ui.py:906 ui.py:925
+#: plugin.py:21 plugin.py:27 ui.py:630 ui.py:649
 msgid "Foreca Weather Forecast"
-msgstr ""
+msgstr "Foreca Sääennuste"
 
-#: plugin.py:23 plugin.py:30
+#: plugin.py:22 plugin.py:28
 msgid "Weather forecast for the upcoming 10 days"
-msgstr ""
+msgstr "Sääennuste seuraavat 10 päivää"
 
-#: ui.py:277
-msgid "simple"
-msgstr ""
-
-#: ui.py:277
+#: ui.py:163
 msgid "better"
-msgstr ""
+msgstr "parempi"
 
-#: ui.py:278 ui.py:279
+#: ui.py:163
+msgid "simple"
+msgstr "yksinkertainen"
+
+#: ui.py:164 ui.py:165
 msgid "black"
-msgstr ""
+msgstr "musta"
 
-#: ui.py:278 ui.py:279
+#: ui.py:164 ui.py:165
 msgid "blue"
-msgstr ""
+msgstr "sininen"
 
-#: ui.py:278 ui.py:279
-msgid "red"
-msgstr ""
-
-#: ui.py:278 ui.py:279
-msgid "yellow"
-msgstr ""
-
-#: ui.py:278 ui.py:279
+#: ui.py:164 ui.py:165
 msgid "green"
-msgstr ""
+msgstr "vihreä"
 
-#: ui.py:286
-msgid "Metric (C, m/s)"
-msgstr ""
+#: ui.py:164 ui.py:165
+msgid "red"
+msgstr "punainen"
 
-#: ui.py:286
-msgid "Metric (C, km/h)"
-msgstr ""
+#: ui.py:164 ui.py:165
+msgid "yellow"
+msgstr "keltainen"
 
-#: ui.py:286
+#: ui.py:172
 msgid "Imperial (C, mph)"
-msgstr ""
+msgstr "Brittiläinen (C, mph)"
 
-#: ui.py:286
+#: ui.py:172
+msgid "Metric (C, km/h)"
+msgstr "Metrinen (C, km/h)"
+
+#: ui.py:172
+msgid "Metric (C, m/s)"
+msgstr "Metrinen (C, m/s)"
+
+#: ui.py:172
 msgid "US (F, mph)"
-msgstr ""
+msgstr "US (F, m/h)"
 
-#: ui.py:287
+#: ui.py:173
 msgid "12 h"
-msgstr ""
+msgstr "12 h"
 
-#: ui.py:287
+#: ui.py:173
 msgid "24 h"
-msgstr ""
+msgstr "24 h"
+
+#: ui.py:464
+msgid "Temp"
+msgstr "Lämpötila"
+
+#: ui.py:476
+msgid "Wind"
+msgstr "Tuuli"
+
+#: ui.py:633 ui.py:698
+msgid "Please wait ..."
+msgstr "Odota ..."
+
+#: ui.py:637
+msgid "Week"
+msgstr "Viikko"
+
+#: ui.py:638
+msgid "City"
+msgstr "Kaupunki"
+
+#: ui.py:644 ui.py:848 ui.py:901 ui.py:1130
+msgid "Favorite 1"
+msgstr "Suosikki 1"
+
+#: ui.py:645 ui.py:849 ui.py:902 ui.py:1131
+msgid "Favorite 2"
+msgstr "Suosikki 2"
+
+#: ui.py:646 ui.py:850 ui.py:903 ui.py:1132
+msgid "Home"
+msgstr "Kotipaikka"
+
+#: ui.py:647
+msgid "Legend"
+msgstr "Karttamerkkien selitykset"
+
+#: ui.py:648
+msgid "Maps"
+msgstr "Kartat"
+
+#: ui.py:649
+msgid "Version "
+msgstr "Versio "
+
+#: ui.py:654 ui.py:1139 ui.py:1387 ui.py:1659
+msgid "Exit - End"
+msgstr "EXIT - Poistu"
+
+#: ui.py:655
+msgid "Menu - Weather maps"
+msgstr "MENU - Sääkartat"
+
+#: ui.py:656
+msgid "Info - Legend"
+msgstr "INFO - Karttamerkkien selitykset"
+
+#: ui.py:657
+msgid "OK - City"
+msgstr "OK - Kaupunki"
+
+#: ui.py:658
+msgid "Left - Previous day"
+msgstr "Vasen -  Edellinen päivä"
+
+#: ui.py:659
+msgid "Right - Next day"
+msgstr "Oikea - Seuraava päivä"
+
+#: ui.py:660
+msgid "Up - Previous page"
+msgstr "Ylös - Edellinen sivu"
+
+#: ui.py:661
+msgid "Down - Next page"
+msgstr "Alas - Seuraava sivu"
+
+#: ui.py:662
+msgid "Left arrow - Previous day"
+msgstr "Vasen nuoli - Edellinen päivä"
+
+#: ui.py:663
+msgid "Right arrow - Next day"
+msgstr "Oikea nuoli - Seuraava päivä"
+
+#: ui.py:664
+msgid "Red - Weekoverview"
+msgstr "Punainen - Viikkoennuste"
 
 #: ui.py:666
-msgid "Temp"
-msgstr ""
+msgid "Green - Favorite 1"
+msgstr "Vihreä - Suosikki 1"
+
+#: ui.py:667
+msgid "Yellow - Favorite 2"
+msgstr "Keltainen - Suosikki 2"
+
+#: ui.py:668
+msgid "Blue - Home"
+msgstr "Sininen - Kotipaikka"
+
+#: ui.py:669
+msgid "0 - Today"
+msgstr "0 - Tänään"
+
+#: ui.py:670
+msgid "1 - Today + 1 day"
+msgstr "1 - Tänään + 1 päivä"
+
+#: ui.py:671
+msgid "2 - Today + 2 days"
+msgstr "2 - Tänään + 2 päivää"
+
+#: ui.py:672
+msgid "3 - Today + 3 days"
+msgstr "3 - Tänään + 3 päivää"
+
+#: ui.py:673
+msgid "4 - Today + 4 days"
+msgstr "4 - Tänään + 4 päivää"
+
+#: ui.py:674
+msgid "5 - Today + 5 days"
+msgstr "5 - Tänään + 5 päivää"
+
+#: ui.py:675
+msgid "6 - Today + 6 days"
+msgstr "6 - Tänään + 6 päivää"
+
+#: ui.py:676
+msgid "7 - Today + 7 days"
+msgstr "7 - Tänään + 7 päivää"
+
+#: ui.py:677
+msgid "8 - Today + 8 days"
+msgstr "8 - Tänään + 8 päivää"
 
 #: ui.py:678
-msgid "Wind"
-msgstr ""
-
-#: ui.py:689
-msgid "Feels like:"
-msgstr ""
-
-#: ui.py:694
-msgid "Precip chance:"
-msgstr ""
-
-#: ui.py:699
-msgid "Humidity:"
-msgstr ""
-
-#: ui.py:909 ui.py:977
-msgid "Please wait ..."
-msgstr ""
-
-#: ui.py:913
-msgid "Week"
-msgstr ""
-
-#: ui.py:914
-msgid "City"
-msgstr ""
-
-#: ui.py:920 ui.py:1115 ui.py:1167 ui.py:1471
-msgid "Favorite 1"
-msgstr ""
-
-#: ui.py:921 ui.py:1116 ui.py:1168 ui.py:1472
-msgid "Favorite 2"
-msgstr ""
-
-#: ui.py:922 ui.py:1117 ui.py:1169 ui.py:1473
-msgid "Home"
-msgstr ""
-
-#: ui.py:923
-msgid "Legend"
-msgstr ""
-
-#: ui.py:924
-msgid "Maps"
-msgstr ""
-
-#: ui.py:925
-msgid "Version "
-msgstr ""
-
-#: ui.py:931 ui.py:1481 ui.py:1750 ui.py:2121
-msgid "Exit - End"
-msgstr ""
-
-#: ui.py:932
-msgid "Menu - Weather maps"
-msgstr ""
-
-#: ui.py:933
-msgid "Info - Legend"
-msgstr ""
-
-#: ui.py:934
-msgid "OK - City"
-msgstr ""
-
-#: ui.py:935
-msgid "Left - Previous day"
-msgstr ""
-
-#: ui.py:936
-msgid "Right - Next day"
-msgstr ""
-
-#: ui.py:937
-msgid "Up - Previous page"
-msgstr ""
-
-#: ui.py:938
-msgid "Down - Next page"
-msgstr ""
-
-#: ui.py:939
-msgid "Left arrow - Previous day"
-msgstr ""
-
-#: ui.py:940
-msgid "Right arrow - Next day"
-msgstr ""
-
-#: ui.py:941
-msgid "Red - Weekoverview"
-msgstr ""
-
-#: ui.py:943
-msgid "Green - Favorite 1"
-msgstr ""
-
-#: ui.py:944
-msgid "Yellow - Favorite 2"
-msgstr ""
-
-#: ui.py:945
-msgid "Blue - Home"
-msgstr ""
-
-#: ui.py:947
-msgid "0 - Today"
-msgstr ""
-
-#: ui.py:948
-msgid "1 - Today + 1 day"
-msgstr ""
-
-#: ui.py:949
-msgid "2 - Today + 2 days"
-msgstr ""
-
-#: ui.py:950
-msgid "3 - Today + 3 days"
-msgstr ""
-
-#: ui.py:951
-msgid "4 - Today + 4 days"
-msgstr ""
-
-#: ui.py:952
-msgid "5 - Today + 5 days"
-msgstr ""
-
-#: ui.py:953
-msgid "6 - Today + 6 days"
-msgstr ""
-
-#: ui.py:954
-msgid "7 - Today + 7 days"
-msgstr ""
-
-#: ui.py:955
-msgid "8 - Today + 8 days"
-msgstr ""
-
-#: ui.py:956
 msgid "9 - Today + 9 days"
-msgstr ""
+msgstr "9 - Tänään + 9 päivää"
 
-#: ui.py:1084
-#, python-format
+#: ui.py:829
 msgid ""
-"Server URL:    %s\n"
 "\n"
-"<   >      =   Prognosis next/previous day\n"
-"0 - 9      =   Prognosis (x) days from now\n"
+"<   >       =   Prognosis next/previous day\n"
+"0 - 9       =   Prognosis (x) days from now\n"
 "\n"
-"VOL+/-     =   Fast scroll 100 (City choice)\n"
+"VOL+/-  =   Fast scroll 100 (City choice)\n"
 "Bouquet+/- =   Fast scroll 500 (City choice)\n"
 "\n"
-"Info       =   This information\n"
-"Menu       =   Satellite photos and maps\n"
+"Info        =   This information\n"
+"Menu     =   Satellite photos and maps\n"
 "\n"
 "Red        =   Temperature chart for the upcoming 5 days\n"
-"Green      =   Go to Favorite 1\n"
-"Yellow     =   Go to Favorite 2\n"
-"Blue       =   Go to Home\n"
+"Green    =   Go to Favorite 1\n"
+"Yellow    =   Go to Favorite 2\n"
+"Blue        =   Go to Home\n"
 "\n"
-"Wind direction =   Arrow to right: Wind from the West\n"
+"Wind direction = Arrow to right: Wind from the West"
 msgstr ""
+"\n"
+"< > = Ennuste seuraava/edellinen päivä\n"
+"0 - 9 = Ennuste seuraavat (x) päivää\n"
+"\n"
+"VOL+/- = Nopea selaus 100 (kaupunkia)\n"
+"CH+/- = Nopea selaus 500 (kaupunkia)\n"
+"\n"
+"Info = Tämä informaatio\n"
+"Menu = Satelliittikuvat ja -kartat\n"
+"\n"
+"Punainen = Lämpötilakaavio seuraaville 5 päivälle\n"
+"Vihreä = Siirry Suosikkiin 1\n"
+"Keltainen = Siirry Suosikkiin 2\n"
+"Sininen = Siirry Kotipaikkaan\n"
+"\n"
+"Tuulensuunta = Nuoli oikealle: Tuuli lännestä"
 
-#: ui.py:1203 ui.py:1239
-msgid "Monday"
-msgstr ""
-
-#: ui.py:1203 ui.py:1239
-msgid "Tuesday"
-msgstr ""
-
-#: ui.py:1203 ui.py:1239
-msgid "Wednesday"
-msgstr ""
-
-#: ui.py:1204 ui.py:1240
-msgid "Thursday"
-msgstr ""
-
-#: ui.py:1204 ui.py:1240
-msgid "Friday"
-msgstr ""
-
-#: ui.py:1204 ui.py:1240
-msgid "Saturday"
-msgstr ""
-
-#: ui.py:1204 ui.py:1241
-msgid "Sunday"
-msgstr ""
-
-#: ui.py:1205
-msgid "January"
-msgstr ""
-
-#: ui.py:1205
-msgid "February"
-msgstr ""
-
-#: ui.py:1205
-msgid "March"
-msgstr ""
-
-#: ui.py:1205
-msgid "April"
-msgstr ""
-
-#: ui.py:1206
-msgid "May"
-msgstr ""
-
-#: ui.py:1206
-msgid "June"
-msgstr ""
-
-#: ui.py:1206
-msgid "July"
-msgstr ""
-
-#: ui.py:1206
-msgid "August"
-msgstr ""
-
-#: ui.py:1207
-msgid "September"
-msgstr ""
-
-#: ui.py:1207
-msgid "October"
-msgstr ""
-
-#: ui.py:1207
-msgid "November"
-msgstr ""
-
-#: ui.py:1207
-msgid "December"
-msgstr ""
-
-#: ui.py:1465 ui.py:1475
+#: ui.py:1124 ui.py:1134
 msgid "Select a city"
-msgstr ""
+msgstr "Valitse kaupunki"
 
-#: ui.py:1474
+#: ui.py:1133
 msgid "Forecast"
-msgstr ""
+msgstr "Ennuste"
 
-#: ui.py:1482 ui.py:1751 ui.py:2122
+#: ui.py:1140 ui.py:1388 ui.py:1660
 msgid "Left - Previous page"
-msgstr ""
+msgstr "Vasen - Edellinen sivu"
 
-#: ui.py:1483 ui.py:1752 ui.py:2123
+#: ui.py:1141 ui.py:1389 ui.py:1661
 msgid "Right - Next page"
-msgstr ""
+msgstr "Oikea - Seuraava sivu"
 
-#: ui.py:1484 ui.py:1753 ui.py:2124
+#: ui.py:1142 ui.py:1390 ui.py:1662
 msgid "Up - Previous"
-msgstr ""
+msgstr "Ylös - Edellinen"
 
-#: ui.py:1485 ui.py:1754 ui.py:2125
+#: ui.py:1143 ui.py:1391 ui.py:1663
 msgid "Down - Next"
-msgstr ""
+msgstr "Alas - Seuraava"
 
-#: ui.py:1486
+#: ui.py:1144
 msgid "OK - Select"
-msgstr ""
+msgstr "OK - Valitse"
 
-#: ui.py:1487
+#: ui.py:1145
 msgid "Green - Assign to Favorite 1"
-msgstr ""
+msgstr "Vihreä - Liitä suosikkiin 1"
 
-#: ui.py:1488
+#: ui.py:1146
 msgid "Yellow - Assign to Favorite 2"
-msgstr ""
+msgstr "Keltainen - Liitä suosikkiin 2"
 
-#: ui.py:1489
+#: ui.py:1147
 msgid "Blue - Assign to Home"
-msgstr ""
+msgstr "Sininen - Liitä kotipaikkaan"
 
-#: ui.py:1490
+#: ui.py:1148
 msgid "Channel+ - 500 back"
-msgstr ""
+msgstr "CH+ - 500 taaksepäin"
 
-#: ui.py:1491
+#: ui.py:1149
 msgid "Channel- - 500 forward"
-msgstr ""
+msgstr "CH- - 500 eteenpäin"
 
-#: ui.py:1492
+#: ui.py:1150
 msgid "Volume- - 100 forward"
-msgstr ""
+msgstr "VOL- - 100 eteenpäin"
 
-#: ui.py:1493
+#: ui.py:1151
 msgid "Volume+ - 100 back"
-msgstr ""
+msgstr "VOL+ - 100 taaksepäin"
 
-#: ui.py:1576
+#: ui.py:1230
 msgid ""
 "This city is stored as home!\n"
 "\n"
 "                                  "
 msgstr ""
+"Tämä kaupunki on tallennettu kotipaikaksi!\n"
+"                                  "
 
-#: ui.py:1588
+#: ui.py:1241
 msgid ""
 "This city is stored as favorite 1!\n"
 "\n"
 "                             "
 msgstr ""
+"Tämä kaupunki on tallennettu suosikiksi 1!\n"
+"                             "
 
-#: ui.py:1600
+#: ui.py:1252
 msgid ""
 "This city is stored as favorite 2!\n"
 "\n"
 "                             "
 msgstr ""
+"Tämä kaupunki on tallennettu suosikiksi 2!\n"
+"                             "
 
-#: ui.py:1734 ui.py:1744
+#: ui.py:1373 ui.py:1382
 msgid "Satellite photos"
-msgstr ""
+msgstr "Satelliittikuvat"
 
-#: ui.py:1740 ui.py:1876
+#: ui.py:1378 ui.py:1504
 msgid "Continents"
-msgstr ""
+msgstr "Maanosat"
 
-#: ui.py:1741 ui.py:1861 ui.py:1865
+#: ui.py:1379 ui.py:1489 ui.py:1493
 msgid "Europe"
-msgstr ""
+msgstr "Eurooppa"
 
-#: ui.py:1742 ui.py:1832 ui.py:1841
+#: ui.py:1380 ui.py:1460 ui.py:1469
 msgid "Germany"
-msgstr ""
+msgstr "Saksa"
 
-#: ui.py:1743 ui.py:2114
+#: ui.py:1381 ui.py:1653
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
-#: ui.py:1755
+#: ui.py:1392
 msgid "Red - Continents"
-msgstr ""
+msgstr "Punainen - Maanosat"
 
-#: ui.py:1756
+#: ui.py:1393
 msgid "Green - Europe"
-msgstr ""
+msgstr "Vihreä - Eurooppa"
 
-#: ui.py:1757
+#: ui.py:1394
 msgid "Yellow - Germany"
-msgstr ""
+msgstr "Keltainen - Saksa"
 
-#: ui.py:1758 ui.py:2126
+#: ui.py:1395 ui.py:1664
 msgid "Blue - Settings"
-msgstr ""
+msgstr "Sininen - Asetukset"
 
-#: ui.py:1759 ui.py:2127
+#: ui.py:1396 ui.py:1665
 msgid "OK - Show"
-msgstr ""
+msgstr "OK - Näytä"
 
-#: ui.py:1767
+#: ui.py:1402
 msgid "Weather map Video"
-msgstr ""
+msgstr "Sääkarttavideo"
 
-#: ui.py:1768
+#: ui.py:1403
 msgid "Showerradar Video"
-msgstr ""
+msgstr "Sadetutkavideo"
 
-#: ui.py:1769
+#: ui.py:1404
 msgid "Temperature Video"
-msgstr ""
+msgstr "Lämpötilavideo"
 
-#: ui.py:1770
+#: ui.py:1405
 msgid "Cloudcover Video"
-msgstr ""
+msgstr "Pilvipeitevideo"
 
-#: ui.py:1771
+#: ui.py:1406
 msgid "Air pressure"
-msgstr ""
+msgstr "Ilmanpaine"
 
-#: ui.py:1772
+#: ui.py:1407
 msgid "Eumetsat"
-msgstr ""
+msgstr "Eumetsat"
 
-#: ui.py:1811
+#: ui.py:1439
 msgid "Baden-Wuerttemberg"
-msgstr ""
+msgstr "Baden-Wuerttemberg"
 
-#: ui.py:1812
+#: ui.py:1440
 msgid "Bavaria"
-msgstr ""
+msgstr "Baijeri"
 
-#: ui.py:1813
+#: ui.py:1441
 msgid "Berlin"
-msgstr ""
+msgstr "Berliini"
 
-#: ui.py:1814
+#: ui.py:1442
 msgid "Brandenburg"
-msgstr ""
+msgstr "Brandenburg"
 
-#: ui.py:1815
+#: ui.py:1443
 msgid "Bremen"
-msgstr ""
+msgstr "Bremen"
 
-#: ui.py:1816
+#: ui.py:1444
 msgid "Hamburg"
-msgstr ""
+msgstr "Hampuri"
 
-#: ui.py:1817
+#: ui.py:1445
 msgid "Hesse"
-msgstr ""
+msgstr "Hesse"
 
-#: ui.py:1818
+#: ui.py:1446
 msgid "Mecklenburg-Vorpommern"
-msgstr ""
+msgstr "Mecklenburg-Vorpommern"
 
-#: ui.py:1819
+#: ui.py:1447
 msgid "Lower Saxony"
-msgstr ""
+msgstr "Ala-Saksi"
 
-#: ui.py:1820
+#: ui.py:1448
 msgid "North Rhine-Westphalia"
-msgstr ""
+msgstr "Nordrhein-Westfalen"
 
-#: ui.py:1821
+#: ui.py:1449
 msgid "Rhineland-Palatine"
-msgstr ""
+msgstr "Rheinland-Pfalz"
 
-#: ui.py:1822
+#: ui.py:1450
 msgid "Saarland"
-msgstr ""
+msgstr "Saarland"
 
-#: ui.py:1823
+#: ui.py:1451
 msgid "Saxony"
-msgstr ""
+msgstr "Saksi"
 
-#: ui.py:1824
+#: ui.py:1452
 msgid "Saxony-Anhalt"
-msgstr ""
+msgstr "Saksi-Anhalt"
 
-#: ui.py:1825
+#: ui.py:1453
 msgid "Schleswig-Holstein"
-msgstr ""
+msgstr "Schleswig-Holstein"
 
-#: ui.py:1826
+#: ui.py:1454
 msgid "Thuringia"
-msgstr ""
+msgstr "Thuringia"
 
-#: ui.py:1836
+#: ui.py:1464
 msgid "Austria"
-msgstr ""
+msgstr "Itävalta"
 
-#: ui.py:1837
+#: ui.py:1465
 msgid "Belgium"
-msgstr ""
+msgstr "Belgia"
 
-#: ui.py:1838
+#: ui.py:1466
 msgid "Czech Republic"
-msgstr ""
+msgstr "Tšekki"
 
-#: ui.py:1839
+#: ui.py:1467
 msgid "Denmark"
-msgstr ""
+msgstr "Tanska"
 
-#: ui.py:1840
+#: ui.py:1468
 msgid "France"
-msgstr ""
+msgstr "Ranska"
 
-#: ui.py:1842
+#: ui.py:1470
 msgid "Greece"
-msgstr ""
+msgstr "Kreikka"
 
-#: ui.py:1843
+#: ui.py:1471
 msgid "Great Britain"
-msgstr ""
+msgstr "Iso-Britannia"
 
-#: ui.py:1844
+#: ui.py:1472
 msgid "Hungary"
-msgstr ""
+msgstr "Unkari"
 
-#: ui.py:1845
+#: ui.py:1473
 msgid "Ireland"
-msgstr ""
+msgstr "Irlanti"
 
-#: ui.py:1846
+#: ui.py:1474
 msgid "Italy"
-msgstr ""
+msgstr "Italia"
 
-#: ui.py:1847
+#: ui.py:1475
 msgid "Latvia"
-msgstr ""
+msgstr "Latvia"
 
-#: ui.py:1848
+#: ui.py:1476
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxemburg"
 
-#: ui.py:1849
+#: ui.py:1477
 msgid "Netherlands"
-msgstr ""
+msgstr "Alankomaat"
 
-#: ui.py:1850
+#: ui.py:1478
 msgid "Poland"
-msgstr ""
+msgstr "Puola"
 
-#: ui.py:1851
+#: ui.py:1479
 msgid "Portugal"
-msgstr ""
+msgstr "Portugali"
 
-#: ui.py:1852
+#: ui.py:1480
 msgid "Russia"
-msgstr ""
+msgstr "Venäjä"
 
-#: ui.py:1853
+#: ui.py:1481
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovakia"
 
-#: ui.py:1854
+#: ui.py:1482
 msgid "Spain"
-msgstr ""
+msgstr "Espanja"
 
-#: ui.py:1855
+#: ui.py:1483
 msgid "Switzerland"
-msgstr ""
+msgstr "Sveitsi"
 
-#: ui.py:1866
+#: ui.py:1494
 msgid "North Africa"
-msgstr ""
+msgstr "Pohjois-Afrikka"
 
-#: ui.py:1867
+#: ui.py:1495
 msgid "South Africa"
-msgstr ""
+msgstr "Etelä-Afrikka"
 
-#: ui.py:1868
+#: ui.py:1496
 msgid "North America"
-msgstr ""
+msgstr "Pohjois-Amerikka"
 
-#: ui.py:1869
+#: ui.py:1497
 msgid "Middle America"
-msgstr ""
+msgstr "Keski-Amerikka"
 
-#: ui.py:1870
+#: ui.py:1498
 msgid "South America"
-msgstr ""
+msgstr "Etelä-Amerikka"
 
-#: ui.py:1871
+#: ui.py:1499
 msgid "Middle East"
-msgstr ""
+msgstr "Lähi-itä"
 
-#: ui.py:1872
+#: ui.py:1500
 msgid "East Asia"
-msgstr ""
+msgstr "Itä-Aasia"
 
-#: ui.py:1873
+#: ui.py:1501
 msgid "Southeast Asia"
-msgstr ""
+msgstr "Kaakkois-Aasia"
 
-#: ui.py:1874
+#: ui.py:1502
 msgid "Middle Asia"
-msgstr ""
+msgstr "Keski-Aasia"
 
-#: ui.py:1875
+#: ui.py:1503
 msgid "Australia"
-msgstr ""
+msgstr "Australia"
 
-#: ui.py:1920
+#: ui.py:1543
 msgid "h"
-msgstr ""
+msgstr "h"
 
-#: ui.py:1929
-msgid "Select action"
-msgstr ""
-
-#: ui.py:1953 ui.py:1990
-msgid "eumetsat menu"
-msgstr ""
-
-#: ui.py:2029
-msgid "No satellite images found."
-msgstr ""
-
-#: ui.py:2032
-#, python-format
-msgid "Failed to process satellite data: %s"
-msgstr ""
-
-#: ui.py:2035 ui.py:2183
-#, python-format
-msgid "A critical error occurred: %s"
-msgstr ""
-
-#: ui.py:2164
-msgid "Invalid selection. Please select a valid region."
-msgstr ""
-
-#: ui.py:2179
-#, python-format
-msgid "Failed to load the satellite image: %s"
-msgstr ""
-
-#: ui.py:2339
+#: ui.py:1809
 msgid "Please wait, photo is being loaded ..."
-msgstr ""
+msgstr "Odota, valokuvaa ladataan..."
 
-#: ui.py:2563 ui.py:2568
+#: ui.py:1945 ui.py:1948
 msgid "SlideShow Settings"
-msgstr ""
+msgstr "Diaesitysasetukset"
 
-#: ui.py:2566
+#: ui.py:1946
 msgid "Cancel"
-msgstr ""
+msgstr "Peruuta"
 
-#: ui.py:2567
+#: ui.py:1947
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
-#: ui.py:2604
-msgid "Type Server"
-msgstr ""
-
-#: ui.py:2605
+#: ui.py:1971
 msgid "Select units"
-msgstr ""
+msgstr "Valitse yksiköt"
 
-#: ui.py:2606
+#: ui.py:1972
 msgid "Select time format"
-msgstr ""
+msgstr "Valitse ajan muoto"
 
-#: ui.py:2607
+#: ui.py:1973
 msgid "City names as labels in the Main screen"
-msgstr ""
+msgstr "Kaupunkien nimet päänäytön nimikkeinä"
 
-#: ui.py:2608
+#: ui.py:1974
 msgid "Frame size in full view"
-msgstr ""
+msgstr "Kehyskoko koko näkymässä"
 
-#: ui.py:2609
+#: ui.py:1975
 msgid "Font size in slideshow"
-msgstr ""
+msgstr "Fonttikoko diaesityksessä"
 
-#: ui.py:2610
+#: ui.py:1976
 msgid "Scaling Mode"
-msgstr ""
+msgstr "Skaalaustila"
 
-#: ui.py:2611
+#: ui.py:1977
 msgid "Slide Time (seconds)"
-msgstr ""
+msgstr "Dian aika (sekunteina)"
 
-#: ui.py:2612
+#: ui.py:1978
 msgid "Show Infoline"
-msgstr ""
+msgstr "Näytä inforivi"
 
-#: ui.py:2613
+#: ui.py:1979
 msgid "Textcolor"
-msgstr ""
+msgstr "Tekstin väri"
 
-#: ui.py:2614
+#: ui.py:1980
 msgid "Backgroundcolor"
-msgstr ""
+msgstr "Taustaväri"
 
-#: ui.py:2615
+#: ui.py:1981
 msgid "Slide picture in loop"
-msgstr ""
+msgstr "Dian kuva luupissa"
 
-#: ui.py:2616
+#: ui.py:1982
 msgid "Display in extensions menu"
-msgstr ""
+msgstr "Näytä laajennusvalikossa"
 
-#: ui.py:2617
+#: ui.py:1983
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
+
+# d000
+msgid "Clear"
+msgstr "Selkeää"
+
+# d100
+msgid "Mostly clear"
+msgstr "Enimmäkseen selkeää"
+
+# d200
+msgid "Partly cloudy"
+msgstr "Puolipilvistä"
+
+# d210
+msgid "Partly cloudy and light rain"
+msgstr "Puolipilvistä ja heikkoa sadetta"
+
+# d220
+msgid "Partly cloudy and showers"
+msgstr "Puolipilvistä ja sadekuuroja"
+
+# d240
+msgid "Partly cloudy, thunderstorms with rain"
+msgstr "Puolipilvistä, ukkosmyrskyjä ja sadetta"
+
+# d211
+msgid "Partly cloudy and light wet snow"
+msgstr "Puolipilvistä ja heikkoa räntäsadetta"
+
+# d221
+msgid "Partly cloudy and wet snow showers"
+msgstr "Puolipilvistä ja räntäsadekuuroja"
+
+# d212
+msgid "Partly cloudy and light snow"
+msgstr "Puolipilvistä ja heikkoa lumisadetta"
+
+# d222
+msgid "Partly cloudy and snow showers"
+msgstr "Puolipilvistä ja lumisadekuuroja"
+
+# d300
+msgid "Cloudy"
+msgstr "Enimmäkseen pilvistä"
+
+# d310
+msgid "Cloudy and light rain"
+msgstr "Enimmäkseen pilvistä ja heikkoa sadetta"
+
+# d320
+msgid "Cloudy and showers"
+msgstr "Enimmäkseen pilvistä ja sadekuuroja"
+
+# d340
+msgid "Cloudy, thunderstorms with rain"
+msgstr "Enimmäkseen pilvistä, ukkosmyrskyjä ja sadetta"
+
+# d311
+msgid "Cloudy and light wet snow"
+msgstr "Enimmäkseen pilvistä ja heikkoa räntäsadetta"
+
+# d321
+msgid "Cloudy and wet snow showers"
+msgstr "Enimmäkseen pilvistä ja räntäsadekuuroja"
+
+# d312
+msgid "Cloudy and light snow"
+msgstr "Enimmäkseen pilvistä ja heikkoa lumisadetta"
+
+# d322
+msgid "Cloudy and snow showers"
+msgstr "Enimmäkseen pilvistä ja lumisadetta"
+
+# d400
+msgid "Overcast"
+msgstr "Pilvistä"
+
+# d410
+msgid "Overcast and light rain"
+msgstr "Pilvistä ja heikkoa sadetta"
+
+# d420
+msgid "Overcast and showers"
+msgstr "Pilvistä ja sadekuuroja"
+
+# d430
+msgid "Overcast and rain"
+msgstr "Pilvistä ja sadetta"
+
+# d440
+msgid "Overcast, thunderstorms with rain"
+msgstr "Pilvistä, ukkosmyrskyjä ja sadetta"
+
+# d411
+msgid "Overcast and light wet snow"
+msgstr "Pilvistä ja heikkoa räntäsadetta"
+
+# d421
+msgid "Overcast and wet snow showers"
+msgstr "Pilvistä ja räntäsadekuuroja"
+
+# d431
+msgid "Overcast and wet snow"
+msgstr "Pilvistä ja räntäsadetta"
+
+# d412
+msgid "Overcast and light snow"
+msgstr "Pilvistä ja heikkoa lumisadetta"
+
+# d422
+msgid "Overcast and snow showers"
+msgstr "Pilvistä ja lumisadekuuroja"
+
+# d432
+msgid "Overcast and snow"
+msgstr "Pilvistä ja lumisadetta"
+
+# d500
+msgid "Thin upper cloud"
+msgstr "Ohutta yläpilveä"
+
+# d600
+msgid "Fog"
+msgstr "Sumua"
+
+#
+msgid "Partly cloudy, possible thunderstorms with rain"
+msgstr "Puolipilvistä, mahdollisia ukkosmyrskyjä ja sadetta"
+
+msgid "Feels like:"
+msgstr "Tuntuu kuin:"
+
+msgid "Precip chance:"
+msgstr "Sateen mahdollisuus:"
+
+msgid "Humidity:"
+msgstr "Kosteus:"
+
+msgid "Monday"
+msgstr "Maanantai"
+
+msgid "Tuesday"
+msgstr "Tiistai"
+
+msgid "Wednesday"
+msgstr "Keskiviikko"
+
+msgid "Thursday"
+msgstr "Torstai"
+
+msgid "Friday"
+msgstr "Perjantai"
+
+msgid "Saturday"
+msgstr "Lauantai"
+
+msgid "Sunday"
+msgstr "Sunnuntai"
+
+msgid "January"
+msgstr "Tammikuuta"
+
+msgid "February"
+msgstr "Helmikuuta"
+
+msgid "March"
+msgstr "Maaliskuuta"
+
+msgid "April"
+msgstr "Huhtikuuta"
+
+msgid "May"
+msgstr "Toukokuuta"
+
+msgid "June"
+msgstr "Kesäkuuta"
+
+msgid "July"
+msgstr "Heinäkuuta"
+
+msgid "August"
+msgstr "Elokuuta"
+
+msgid "September"
+msgstr "Syyskuuta"
+
+msgid "October"
+msgstr "Lokakuuta"
+
+msgid "November"
+msgstr "Marraskuuta"
+
+msgid "December"
+msgstr "Joulukuuta"
