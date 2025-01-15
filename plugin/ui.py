@@ -1,4 +1,4 @@
-VERSION = "4.0.1"
+VERSION = "4.0.2"
 #-------------------------------------------------------
 #              Foreca Weather Forecast E2
 #   This Plugin retrieves the actual weather forecast
@@ -96,6 +96,7 @@ VERSION = "4.0.1"
 # 3.3.4 homepage changed from 'foreca.hr' to 'foreca.ba'
 # 4.0.0 fixed "View_Slideshow", localizations, decoding of jpeg by Orlandox 7.1.2025
 # 4.0.1 baseurl -> from 'foreca.ba' to 'foreca.nz'
+# 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file
 # To do:
 #	Add 10 day forecast on green key press
 #	City search at Foreca website on yellow key press. This will eliminate complete city DB.
@@ -106,7 +107,7 @@ VERSION = "4.0.1"
 #	Show setup menu on Menu key
 
 # for localized messages
-from . import _
+from . import _, file_baseurl
 from locale import setlocale, LC_COLLATE, strxfrm
 
 # PYTHON IMPORTS
@@ -142,6 +143,7 @@ from skin import parseFont, parseColor
 from Tools.Directories import resolveFilename, SCOPE_CONFIG, SCOPE_PLUGINS, fileExists
 from Tools.LoadPixmap import LoadPixmap
 from twisted.internet.reactor import callInThread
+import requests
 
 pluginPrintname = "[Foreca Ver. %s]" % VERSION
 config.plugins.foreca.home = ConfigText(default="Germany/Berlin", fixed_size=False)
@@ -161,7 +163,25 @@ config.plugins.foreca.time = ConfigSelection(default="24h", choices=[("12h", _("
 config.plugins.foreca.debug = ConfigEnableDisable(default=False)
 
 HEADERS = {'User-Agent': 'Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV; Maple2012) AppleWebKit/534.7 (KHTML, like Gecko) SmartTV Safari/534.7'}
-BASEURL = "http://www.foreca.nz/"
+
+def get_base_url_from_txt(file_baseurl, fallback_url="https://www.foreca.ba/"):
+	try:
+		response = requests.get(file_baseurl, timeout=10)
+		response.raise_for_status()
+		new_base_url = response.text.strip()
+		test_response = requests.get(new_base_url, timeout=10)
+		test_response.raise_for_status()
+		print("New BASEURL found and working:", new_base_url)
+		return new_base_url
+	except Exception as e:
+		print("Not a valid BASEURL at baseurl.txt:", str(e))
+		print("Using the fallback BASEURL:", fallback_url)
+		return fallback_url
+
+BASEURL = get_base_url_from_txt(file_baseurl)
+if not BASEURL.endswith("/"):
+	BASEURL += "/"
+
 MODULE_NAME = __name__.split(".")[-1]
 USR_PATH = resolveFilename(SCOPE_CONFIG) + "Foreca"
 PICON_PATH = resolveFilename(SCOPE_PLUGINS) + "Extensions/Foreca/picon/"
