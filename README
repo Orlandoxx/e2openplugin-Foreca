@@ -12,4 +12,6 @@ The basic setting of some parameters can be changed from the slideshow menu usin
 
 The respective key functions are displayed by pressing the Help key. 
 
-The source of the forecasts and weather maps is the Finnish company Foreca. 
+The source of the forecasts and weather maps is the Finnish company Foreca.
+
+Base URL is read from baseurl.txt file. If Foreca stops working, then new base URL is set to that file and enigma2 boot is enough to Foreca to work again.
