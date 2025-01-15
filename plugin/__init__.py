@@ -22,3 +22,4 @@ def _(txt):
 
 localeInit()
 language.addCallback(localeInit)
+file_baseurl = "https://raw.githubusercontent.com/Orlandoxx/e2openplugin-Foreca/refs/heads/master/plugin/baseurl.txt"
