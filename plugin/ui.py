@@ -203,9 +203,6 @@ def FAlog(info, wert=""):
 				file.write(f"{strftime('%H:%M:%S')} {info} {wert}\r\n")
 		except OSError:
 			print('[Foreca] Logging-Error')
-	else:
-		print(f"[Foreca] {info} {wert}")
-
 
 # Make Path for Slideshow
 CACHE_PATH = "/tmp/Foreca/"
@@ -632,7 +629,6 @@ class ForecaPreview(Screen, HelpableScreen):
 		self.setup_title = _("Foreca Weather Forecast")
 		self["MainList"] = MainMenuList()
 		self["Baseurl"] = StaticText(BASEURL)
-		print("BASEURL: ", self["Baseurl"])
 		self["Titel"] = StaticText()
 		self["Titel2"] = StaticText(_("Please wait ..."))
 		self["Titel3"] = StaticText()
