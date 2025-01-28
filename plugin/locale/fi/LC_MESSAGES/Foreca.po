@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Foreca 4.0.0\n"
+"Project-Id-Version: Foreca 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-31 08:00+0200\n"
-"PO-Revision-Date: 2025-01-07 14:32+0200\n"
+"PO-Revision-Date: 2025-01-28 12:37+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: \n"
 "Language: fi_FI\n"
@@ -658,7 +658,7 @@ msgstr "Selkeää"
 
 # d100
 msgid "Mostly clear"
-msgstr "Enimmäkseen selkeää"
+msgstr "Melkein selkeää"
 
 # d200
 msgid "Partly cloudy"
@@ -666,47 +666,47 @@ msgstr "Puolipilvistä"
 
 # d210
 msgid "Partly cloudy and light rain"
-msgstr "Puolipilvistä ja heikkoa sadetta"
+msgstr "Puolipilvistä, mahdollisesti vähäistä sadetta"
 
 # d220
 msgid "Partly cloudy and showers"
-msgstr "Puolipilvistä ja sadekuuroja"
+msgstr "Puolipilvistä, ajoittain sadetta"
 
 # d240
 msgid "Partly cloudy, thunderstorms with rain"
-msgstr "Puolipilvistä, ukkosmyrskyjä ja sadetta"
+msgstr "Puolipilvistä, ukkosta"
 
 # d211
 msgid "Partly cloudy and light wet snow"
-msgstr "Puolipilvistä ja heikkoa räntäsadetta"
+msgstr "Puolipilvistä, mahdollisesti vähäistä räntäsadetta"
 
 # d221
 msgid "Partly cloudy and wet snow showers"
-msgstr "Puolipilvistä ja räntäsadekuuroja"
+msgstr "Puolipilvistä, ajoittain räntäsadetta"
 
 # d212
 msgid "Partly cloudy and light snow"
-msgstr "Puolipilvistä ja heikkoa lumisadetta"
+msgstr "Puolipilvistä, mahdollisesti vähäistä lumisadetta"
 
 # d222
 msgid "Partly cloudy and snow showers"
-msgstr "Puolipilvistä ja lumisadekuuroja"
+msgstr "Puolipilvistä, ajoittaista lumisadetta"
 
 # d300
 msgid "Cloudy"
-msgstr "Enimmäkseen pilvistä"
+msgstr "Melko pilvistä"
 
 # d310
 msgid "Cloudy and light rain"
-msgstr "Enimmäkseen pilvistä ja heikkoa sadetta"
+msgstr "Melko pilvistä, mahdollisesti vähäistä sadetta"
 
 # d320
 msgid "Cloudy and showers"
-msgstr "Enimmäkseen pilvistä ja sadekuuroja"
+msgstr "Melko pilvistä, ajoittaista sadetta"
 
 # d340
 msgid "Cloudy, thunderstorms with rain"
-msgstr "Enimmäkseen pilvistä, ukkosmyrskyjä ja sadetta"
+msgstr "Melko pilvistä, ukkosta"
 
 # d311
 msgid "Cloudy and light wet snow"
@@ -714,15 +714,15 @@ msgstr "Enimmäkseen pilvistä ja heikkoa räntäsadetta"
 
 # d321
 msgid "Cloudy and wet snow showers"
-msgstr "Enimmäkseen pilvistä ja räntäsadekuuroja"
+msgstr "Melko pilvistä, ajoittaista räntäsadetta"
 
 # d312
 msgid "Cloudy and light snow"
-msgstr "Enimmäkseen pilvistä ja heikkoa lumisadetta"
+msgstr "Melko pilvistä, mahdollisesti vähäistä lumisadetta"
 
 # d322
 msgid "Cloudy and snow showers"
-msgstr "Enimmäkseen pilvistä ja lumisadetta"
+msgstr "Melko pilvistä, ajoittaista lumisadetta"
 
 # d400
 msgid "Overcast"
@@ -730,43 +730,43 @@ msgstr "Pilvistä"
 
 # d410
 msgid "Overcast and light rain"
-msgstr "Pilvistä ja heikkoa sadetta"
+msgstr "Pilvistä, mahdollisesti vähäistä sadetta"
 
 # d420
 msgid "Overcast and showers"
-msgstr "Pilvistä ja sadekuuroja"
+msgstr "Pilvistä, ajoittaista sadetta"
 
 # d430
 msgid "Overcast and rain"
-msgstr "Pilvistä ja sadetta"
+msgstr "Pilvistä, runsasta sadetta"
 
 # d440
 msgid "Overcast, thunderstorms with rain"
-msgstr "Pilvistä, ukkosmyrskyjä ja sadetta"
+msgstr "Pilvistä, ukkosta"
 
 # d411
 msgid "Overcast and light wet snow"
-msgstr "Pilvistä ja heikkoa räntäsadetta"
+msgstr "Pilvistä, mahdollisesti vähäistä räntäsadetta"
 
 # d421
 msgid "Overcast and wet snow showers"
-msgstr "Pilvistä ja räntäsadekuuroja"
+msgstr "Pilvistä, ajoittaista räntäsadetta"
 
 # d431
 msgid "Overcast and wet snow"
-msgstr "Pilvistä ja räntäsadetta"
+msgstr "Pilvistä, runsasta räntäsadetta"
 
 # d412
 msgid "Overcast and light snow"
-msgstr "Pilvistä ja heikkoa lumisadetta"
+msgstr "Pilvistä, mahdollisesti vähäistä lumisadetta"
 
 # d422
 msgid "Overcast and snow showers"
-msgstr "Pilvistä ja lumisadekuuroja"
+msgstr "Pilvistä, ajoittaista lumisadetta"
 
 # d432
 msgid "Overcast and snow"
-msgstr "Pilvistä ja lumisadetta"
+msgstr "Pilvistä, runsasta lumisadetta"
 
 # d500
 msgid "Thin upper cloud"
@@ -776,9 +776,9 @@ msgstr "Ohutta yläpilveä"
 msgid "Fog"
 msgstr "Sumua"
 
-#
+# Extra
 msgid "Partly cloudy, possible thunderstorms with rain"
-msgstr "Puolipilvistä, mahdollisia ukkosmyrskyjä ja sadetta"
+msgstr "Puolipilvistä, mahdollisesti ukkosta"
 
 msgid "Feels like:"
 msgstr "Tuntuu kuin:"
@@ -811,37 +811,37 @@ msgid "Sunday"
 msgstr "Sunnuntai"
 
 msgid "January"
-msgstr "Tammikuuta"
+msgstr "tammikuuta"
 
 msgid "February"
-msgstr "Helmikuuta"
+msgstr "helmikuuta"
 
 msgid "March"
-msgstr "Maaliskuuta"
+msgstr "maaliskuuta"
 
 msgid "April"
-msgstr "Huhtikuuta"
+msgstr "huhtikuuta"
 
 msgid "May"
-msgstr "Toukokuuta"
+msgstr "toukokuuta"
 
 msgid "June"
-msgstr "Kesäkuuta"
+msgstr "kesäkuuta"
 
 msgid "July"
-msgstr "Heinäkuuta"
+msgstr "heinäkuuta"
 
 msgid "August"
-msgstr "Elokuuta"
+msgstr "elokuuta"
 
 msgid "September"
-msgstr "Syyskuuta"
+msgstr "syyskuuta"
 
 msgid "October"
-msgstr "Lokakuuta"
+msgstr "lokakuuta"
 
 msgid "November"
-msgstr "Marraskuuta"
+msgstr "marraskuuta"
 
 msgid "December"
-msgstr "Joulukuuta"
+msgstr "joulukuuta"
