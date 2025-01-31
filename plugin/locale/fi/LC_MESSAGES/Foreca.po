@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Foreca 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-31 08:00+0200\n"
-"PO-Revision-Date: 2025-01-31 10:55+0200\n"
+"PO-Revision-Date: 2025-01-31 15:15+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: \n"
 "Language: fi_FI\n"
@@ -111,7 +111,7 @@ msgstr "Kotipaikka"
 
 #: ui.py:647
 msgid "Legend"
-msgstr "Karttamerkkien selitykset"
+msgstr "Näppäintiedot"
 
 #: ui.py:648
 msgid "Maps"
