@@ -1,4 +1,4 @@
-VERSION = "4.0.2"
+VERSION = "4.0.3"
 #-------------------------------------------------------
 #              Foreca Weather Forecast E2
 #   This Plugin retrieves the actual weather forecast
@@ -96,7 +96,8 @@ VERSION = "4.0.2"
 # 3.3.4 homepage changed from 'foreca.hr' to 'foreca.ba'
 # 4.0.0 fixed "View_Slideshow", localizations, decoding of jpeg by Orlandox 7.1.2025
 # 4.0.1 baseurl -> from 'foreca.ba' to 'foreca.nz'
-# 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file
+# 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file, thanx to Lululla
+# 4.0.3 Added search city, thanx to Lululla
 # To do:
 #	Add 10 day forecast on green key press
 #	City search at Foreca website on yellow key press. This will eliminate complete city DB.
@@ -136,6 +137,7 @@ from Components.MultiContent import MultiContentEntryText, MultiContentEntryPixm
 from Components.Pixmap import Pixmap
 from Components.PluginComponent import plugins
 from Components.Sources.StaticText import StaticText
+from Components.Sources.Boolean import Boolean
 from Screens.HelpMenu import HelpableScreen
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -1078,32 +1080,44 @@ class CityPanel(Screen, HelpableScreen):
 	def __init__(self, session, panelmenu):
 		self.session = session
 		self.skin = """
-			<screen name="CityPanel" position="center,60" size="660,500" title="Select a city" backgroundColor="#40000000" resolution="1280,720" >
-				<widget name="Mlist" position="10,10" size="640,450" zPosition="3" backgroundColor="#40000000" backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
-				<eLabel position="0,465" zPosition="2" size="676,2" foregroundColor="#c3c3c9" backgroundColor="#c1cdc1" />
-				<widget source="key_green" render="Label" position="50,470" zPosition="2" size="100,30" font="Regular;20" valign="center" halign="left" transparent="1" />
-				<widget source="key_yellow" render="Label" position="200,470" zPosition="2" size="100,30" font="Regular;20" valign="center" halign="left" transparent="1" />
-				<widget source="key_blue" render="Label" position="350,470" zPosition="2" size="100,30" font="Regular;20" valign="center" halign="left" transparent="1" />
-				<widget source="key_ok" render="Label" position="500,470" zPosition="2" size="120,30" font="Regular;20" valign="center" halign="left" transparent="1" />
-				<ePixmap position="10,473" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
-				<ePixmap position="160,473" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
-				<ePixmap position="310,473" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-				<ePixmap position="460,473" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
-				<ePixmap position="624,473" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
+			<screen name="CityPanel" position="center,60" size="800,500" title="Select a city" backgroundColor="#40000000" resolution="1280,720" >
+				<widget name="Mlist" position="10,10" size="790,440" zPosition="3" backgroundColor="#40000000" backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
+				<eLabel position="0,465" zPosition="2" size="800,2" foregroundColor="#c3c3c9" backgroundColor="#c1cdc1" />
+				<widget source="key_red" render="Label" position="40,470" zPosition="2" size="140,30" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_green" render="Label" position="190,470" zPosition="2" size="140,30" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_yellow" render="Label" position="340,470" zPosition="2" size="140,30" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_blue" render="Label" position="490,470" zPosition="2" size="140,30" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_ok" render="Label" position="640,470" zPosition="2" size="120,30" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<ePixmap position="5,473" size="36,25" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
+				<ePixmap position="155,473" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
+				<ePixmap position="305,473" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="455,473" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
+				<ePixmap position="605,473" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
+				<ePixmap position="755,473" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
 			</screen>"""
 		Screen.__init__(self, session)
 		self.setup_title = _("Select a city")
 		self.Mlist = []
 		self["Mlist"] = CityPanelList([])
 		self.onChangedEntry = []
+		self['key_red'] = StaticText(_('Keyboard'))
 		self["key_green"] = StaticText(_("Favorite 1"))
 		self["key_yellow"] = StaticText(_("Favorite 2"))
 		self["key_blue"] = StaticText(_("Home"))
 		self["key_ok"] = StaticText(_("Forecast"))
+		self['VKeyIcon'] = Boolean(False)
+		self['searchactions'] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'], {
+				'red': self.openKeyboard}, -2)
 		self.setTitle(_("Select a city"))
+		self.filtered_list = []
+		self.search_text = ""
+		global search_ok
+		search_ok = False
+
 		HelpableScreen.__init__(self)
 		self["actions"] = HelpableActionMap(self, "ForecaActions",
 			{
+				"text": (self.openKeyboard, _("Open Keyboard")),
 				"cancel": (self.exit, _("Exit - End")),
 				"left": (self.left, _("Left - Previous page")),
 				"right": (self.right, _("Right - Next page")),
@@ -1120,16 +1134,48 @@ class CityPanel(Screen, HelpableScreen):
 			}, -2)
 		self.onShown.append(self.prepare)
 
+	def openKeyboard(self):
+		from Screens.VirtualKeyBoard import VirtualKeyBoard
+		self.session.openWithCallback(
+			self.filter,
+			VirtualKeyBoard,
+			title=_("Search your City"),
+			text='Helsinki')
+	def filter(self, result):
+		if result:
+			try:
+				self.filtered_list = []
+				search = result.lower()
+				for item in self.Mlist:
+					city_name = item[0][0]
+					print('city_name:', city_name)
+					if search in city_name.lower():
+						global search_ok
+						search_ok = True
+						self.filtered_list.append(item)
+				if len(self.filtered_list) < 1:
+					self.session.open(MessageBox, _('No City found in search!!!'), MessageBox.TYPE_INFO, timeout=5)
+					return
+				else:
+					self['Mlist'].l.setList(self.filtered_list)
+					self['Mlist'].moveToIndex(0)
+					self["Mlist"].selectionEnabled(1)
+			except Exception as error:
+				print(error)
+				self.session.open(MessageBox, _('An error occurred during search!'), MessageBox.TYPE_ERROR, timeout=5)
+
 	def prepare(self):
 		self.maxidx = 0
+		self.Mlist = []
 		if fileExists(USR_PATH + "/City.cfg"):
 			content = open(USR_PATH + "/City.cfg", "r")
 			for line in content:
 				text = line.strip()
 				self.maxidx += 1
-				self.Mlist.append(self.CityEntryItem((text.replace("_", " "), text)))
-			content.close
-		self["Mlist"].l.setList(self.Mlist)
+				entry = (text.replace("_", " "), text)
+				self.Mlist.append(self.CityEntryItem(entry))
+		self.filtered_list = self.Mlist
+		self["Mlist"].l.setList(self.filtered_list)
 		self["Mlist"].selectionEnabled(1)
 
 	def jump500_up(self):
@@ -1175,9 +1221,15 @@ class CityPanel(Screen, HelpableScreen):
 		self["Mlist"].pageDown()
 
 	def exit(self):
-		global menu
-		menu = "stop"
-		self.close()
+		global search_ok
+		if search_ok is True:
+			search_ok = False
+			self.prepare()
+		else:
+			global menu, city
+			city = city
+			menu = "stop"
+			self.close()
 
 	def ok(self):
 		global city
