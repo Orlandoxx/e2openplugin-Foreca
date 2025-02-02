@@ -1,9 +1,9 @@
 Package: enigma2-plugin-extensions-foreca
-Version: 4.0.1
+Version: 4.0.3
 Description: Weather forecast for the upcoming 10 days
 Section: extra
 Priority: optional
 Maintainer: Orlandox
 Architecture: all
 OE: enigma2-plugin-extensions-foreca
-Source: https://github.com/E2OpenPlugins/e2openplugin-Foreca
+Source: https://github.com/Orlandoxx/e2openplugin-Foreca
