@@ -1148,7 +1148,6 @@ class CityPanel(Screen, HelpableScreen):
 				search = result.lower()
 				for item in self.Mlist:
 					city_name = item[0][0]
-					print('city_name:', city_name)
 					if search in city_name.lower():
 						global search_ok
 						search_ok = True
