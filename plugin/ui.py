@@ -97,7 +97,7 @@ VERSION = "4.0.3"
 # 4.0.0 fixed "View_Slideshow", localizations, decoding of jpeg by Orlandox 7.1.2025
 # 4.0.1 baseurl -> from 'foreca.ba' to 'foreca.nz'
 # 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file, thanx to Lululla
-# 4.0.3 Added search city, thanx to Lululla
+# 4.0.3 Added search city & messagebox, thanx to Lululla
 # To do:
 #	Add 10 day forecast on green key press
 #	City search at Foreca website on yellow key press. This will eliminate complete city DB.
@@ -820,7 +820,20 @@ class ForecaPreview(Screen, HelpableScreen):
 		self.StartPage()
 
 	def info(self):
-		message = "%s" % (_("\n<   >       =   Prognosis next/previous day\n0 - 9       =   Prognosis (x) days from now\n\nVOL+/-  =   Fast scroll 100 (City choice)\nBouquet+/- =   Fast scroll 500 (City choice)\n\nInfo        =   This information\nMenu     =   Satellite photos and maps\n\nRed        =   Temperature chart for the upcoming 5 days\nGreen    =   Go to Favorite 1\nYellow    =   Go to Favorite 2\nBlue        =   Go to Home\n\nWind direction = Arrow to right: Wind from the West"))
+		message = str("%s" % (_("Base URL : %s\n\n") % BASEURL))
+		message += _("VERSION = %s\n\n") % VERSION
+		message += _("< > = Prognosis next/previous day\n")
+		message += _("0 - 9 = Prognosis (x) days from now\n\n")
+		message += _("VOL+/- = Fast scroll 100 (City choice)\n")
+		message += _("Ch+/- = Fast scroll 500 (City choice)\n\n")
+		message += _("INFO = This information\n")
+		message += _("MENU = Satellite photos and maps\n")
+		message += _("OK = Go to City Panel\n\n")
+		message += _("Red = Temperature chart for the upcoming 5 days\n")
+		message += _("Green = Go to Favorite 1\n")
+		message += _("Yellow = Go to Favorite 2\n")
+		message += _("Blue = Go to Home\n\n")
+		message += _("Wind direction = Arrow to right: Wind from the West")
 		self.session.open(MessageBox, message, MessageBox.TYPE_INFO)
 
 	def OK(self):
