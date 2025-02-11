@@ -117,10 +117,6 @@ msgstr ""
 msgid "Maps"
 msgstr ""
 
-#: ui.py:649
-msgid "Version "
-msgstr ""
-
 #: ui.py:654 ui.py:1139 ui.py:1387 ui.py:1659
 msgid "Exit - End"
 msgstr ""
@@ -224,7 +220,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"VERSION    =   %s\n"
+"VERSION = %s\n"
 "\n"
 msgstr ""
 
