@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Foreca 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-31 08:00+0200\n"
-"PO-Revision-Date: 2025-02-10 08:37+0200\n"
+"PO-Revision-Date: 2025-02-11 18:51+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: \n"
 "Language: fi_FI\n"
@@ -117,10 +117,6 @@ msgstr "Näppäintiedot"
 msgid "Maps"
 msgstr "Kartat"
 
-#: ui.py:649
-msgid "Version "
-msgstr "Versio "
-
 #: ui.py:654 ui.py:1139 ui.py:1387 ui.py:1659
 msgid "Exit - End"
 msgstr "EXIT - Poistu"
@@ -226,7 +222,7 @@ msgstr ""
 "\n"
 
 msgid ""
-"VERSION    =   %s\n"
+"VERSION = %s\n"
 "\n"
 msgstr ""
 "VERSIO = %s\n"
