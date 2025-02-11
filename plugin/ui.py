@@ -97,7 +97,7 @@ VERSION = "4.0.3"
 # 4.0.0 fixed "View_Slideshow", localizations, decoding of jpeg by Orlandox 7.1.2025
 # 4.0.1 baseurl -> from 'foreca.ba' to 'foreca.nz'
 # 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file, thanx to Lululla
-# 4.0.3 Added search city & messagebox, thanx to Lululla
+# 4.0.3 Added search city, messagebox & city name to PicView, thanx to Lululla
 # To do:
 #	Add 10 day forecast on green key press
 #	City search at Foreca website on yellow key press. This will eliminate complete city DB.
@@ -913,7 +913,7 @@ class ForecaPreview(Screen, HelpableScreen):
 			response.raise_for_status()
 			with open(devicepath, 'wb') as f:
 				f.write(response.content)
-			self.session.open(PicView, devicepath, 0, False)
+			self.session.open(PicView, devicepath, 0, False, self.plaats)
 		except exceptions.RequestException as error:
 			self.error(str(error))
 
@@ -1014,8 +1014,9 @@ class ForecaPreview(Screen, HelpableScreen):
 		datum2 = datum[:foundPos2] + datum[foundPos:] + "." + datum[foundPos2:foundPos]
 		foundPos = self.ort.find("/")
 		plaats = _(self.ort[0:foundPos]) + "-" + self.ort[foundPos + 1:len(self.ort)]
-		self["Titel"].text = plaats.replace("_", " ") + "  -  " + datum2
-		self["Titel4"].text = plaats.replace("_", " ")
+		self.plaats = plaats.replace("_", " ")
+		self["Titel"].text = self.plaats + "  -  " + datum2
+		self["Titel4"].text = self.plaats
 		self["Titel5"].text = datum2
 		self["Titel3"].text = self.ort[:foundPos].replace("_", " ") + "\r\n" + self.ort[foundPos + 1:].replace("_", " ") + "\r\n" + datum2
 		self["MainList"].SetList(datalist)
@@ -1907,7 +1908,7 @@ class SatPanelb(Screen, HelpableScreen):
 			response.raise_for_status()
 			with open(devicepath, 'wb') as f:
 				f.write(response.content)
-			self.session.open(PicView, devicepath, 0, False)
+			self.session.open(PicView, devicepath, 0, False, None)
 		except exceptions.RequestException as error:
 			FAlog("Error:", str(error))
 
@@ -1917,7 +1918,7 @@ class SatPanelb(Screen, HelpableScreen):
 
 
 class PicView(Screen):
-	def __init__(self, session, filelist, index, startslide):
+	def __init__(self, session, filelist, index, startslide, plaats=None):
 		self.session = session
 		self.filelist = filelist
 		self.lastindex = index
@@ -1927,6 +1928,7 @@ class PicView(Screen):
 		self.skin = "<screen position=\"0,0\" size=\"" + str(size_w) + "," + str(size_h) + "\" > \
 			<eLabel position=\"0,0\" zPosition=\"0\" size=\"" + str(size_w) + "," + str(size_h) + "\" backgroundColor=\"" + self.bgcolor + "\" /> \
 			<widget name=\"pic\" position=\"" + str(space) + "," + str(space) + "\" size=\"" + str(size_w - (space * 2)) + "," + str(size_h - (space * 2)) + "\" zPosition=\"1\" alphatest=\"on\" /> \
+			<widget name=\"city\" position=\"50,37\" size=\"1800,60\" font=\"Regular;42\" zPosition=\"10\" backgroundColor=\"" + self.bgcolor + "\" foregroundColor=\"yellow\" transparent=\"1\" /> \
 			</screen>"
 		Screen.__init__(self, session)
 		self["actions"] = ActionMap(["OkCancelActions", "MediaPlayerActions"],
@@ -1935,6 +1937,7 @@ class PicView(Screen):
 				"stop": self.Exit,
 			}, -1)
 		self["pic"] = Pixmap()
+		self["city"] = Label(plaats)
 		self.old_index = 0
 		self.currPic = []
 		self.shownow = True
