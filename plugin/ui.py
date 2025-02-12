@@ -1133,6 +1133,7 @@ class CityPanel(Screen, HelpableScreen):
 		self["actions"] = HelpableActionMap(self, "ForecaActions",
 			{
 				"text": (self.openKeyboard, _("Open Keyboard")),
+				"red": (self.openKeyboard, _("Open Keyboard")),
 				"cancel": (self.exit, _("Exit - End")),
 				"left": (self.left, _("Left - Previous page")),
 				"right": (self.right, _("Right - Next page")),
