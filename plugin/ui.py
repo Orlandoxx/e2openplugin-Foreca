@@ -1121,8 +1121,10 @@ class CityPanel(Screen, HelpableScreen):
 		self["key_blue"] = StaticText(_("Home"))
 		self["key_ok"] = StaticText(_("Forecast"))
 		self['VKeyIcon'] = Boolean(False)
-		self['searchactions'] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'], {
-				'red': self.openKeyboard}, -2)
+		self['searchactions'] = ActionMap(['SetupActions', 'ColorActions', 'MenuActions'],
+			{
+				'red': self.openKeyboard
+			}, -2)
 		self.setTitle(_("Select a city"))
 		self.filtered_list = []
 		self.search_text = ""
@@ -1721,6 +1723,7 @@ class SatPanel(Screen, HelpableScreen):
 			(_("Belgium"), 'belgien'),
 			(_("Czech Republic"), 'tschechien'),
 			(_("Denmark"), 'daenemark'),
+			(_("Finland"), 'finnland'),
 			(_("France"), 'frankreich'),
 			(_("Germany"), 'deutschland'),
 			(_("Greece"), 'griechenland'),
@@ -1736,6 +1739,7 @@ class SatPanel(Screen, HelpableScreen):
 			(_("Russia"), 'russland'),
 			(_("Slovakia"), 'slowakei'),
 			(_("Spain"), 'spanien'),
+			(_("Sweden"), 'schweden'),
 			(_("Switzerland"), 'schweiz'),
 		]
 		itemList.sort(key=lambda i: strxfrm(i[0]))
@@ -1903,13 +1907,12 @@ class SatPanelb(Screen, HelpableScreen):
 		region = self['Mlist'].l.getCurrentSelection()[0][1]
 		devicepath = "/tmp/meteogram.png"
 		url = "http://img.wetterkontor.de/karten/" + region + "0.jpg"
-		headers = {"User-Agent": choice(AGENTS), 'Accept': 'application/json'}
 		try:
-			response = get(url, headers=headers, timeout=(3.05, 6))
+			response = get(url, headers=HEADERS, timeout=(3.05, 6))
 			response.raise_for_status()
 			with open(devicepath, 'wb') as f:
 				f.write(response.content)
-			self.session.open(PicView, devicepath, 0, False, None)
+			self.session.open(PicView, devicepath, 0, False, self.setup_title)
 		except exceptions.RequestException as error:
 			FAlog("Error:", str(error))
 
