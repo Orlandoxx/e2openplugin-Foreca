@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Foreca 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-10 08:00+0200\n"
-"PO-Revision-Date: 2025-02-10 08:43+0200\n"
+"PO-Revision-Date: 2025-02-11 19:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: \n"
@@ -853,4 +853,19 @@ msgid "November"
 msgstr ""
 
 msgid "December"
+msgstr ""
+
+msgid "Stop - End"
+msgstr ""
+
+msgid "Pause - Pause"
+msgstr ""
+
+msgid "Play - Play"
+msgstr ""
+
+msgid "Left - Previous"
+msgstr ""
+
+msgid "Right - Next"
 msgstr ""
