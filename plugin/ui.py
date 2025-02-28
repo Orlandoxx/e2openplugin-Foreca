@@ -603,10 +603,10 @@ class ForecaPreview(Screen, HelpableScreen):
 					<ePixmap position="140,560" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
 					<ePixmap position="288,560" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
 					<ePixmap position="436,560" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-					<ePixmap position="584,560" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
+					<ePixmap position="581,558" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
 					<ePixmap position="692,560" size="36,25" pixmap="skin_default/buttons/key_menu.png" transparent="1" alphatest="on" />
 					<ePixmap position="815,560" size="36,25" pixmap="skin_default/buttons/key_info.png" transparent="1" alphatest="on" />
-					<ePixmap position="938,560" size="36,25" pixmap="skin_default/buttons/key_help.png" transparent="1" alphatest="on" />
+					<ePixmap position="938,558" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
 				</screen>"""
 		else:
 			self.skin = """
@@ -1107,8 +1107,8 @@ class CityPanel(Screen, HelpableScreen):
 				<ePixmap position="155,473" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
 				<ePixmap position="305,473" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
 				<ePixmap position="455,473" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-				<ePixmap position="605,473" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
-				<ePixmap position="728,473" size="36,25" pixmap="skin_default/buttons/key_help.png" transparent="1" alphatest="on" />
+				<ePixmap position="600,471" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
+				<ePixmap position="728,471" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
 			</screen>"""
 		Screen.__init__(self, session)
 		self.setup_title = _("Select a city")
@@ -1380,7 +1380,7 @@ class View_Slideshow (Screen, HelpableScreen):
 			<widget name=\"play_icon\" position=\"" + str(space + 40) + "," + str(space + 2) + "\" size=\"40,40\" zPosition=\"2\" pixmap=\"" + THUMB_PATH + "ico_mp_play.png\"  alphatest=\"on\" /> \
 			<widget name=\"pause_icon\" position=\"" + str(space + 40) + "," + str(space + 2) + "\" size=\"40,40\" zPosition=\"2\" pixmap=\"" + THUMB_PATH + "ico_mp_pause.png\"  alphatest=\"on\" /> \
 			<widget name=\"file\" position=\"" + str(space + 85) + "," + str(space + 4) + "\" size=\"" + str(size_w - (space * 2) - 50) + "," + str(fontsize + 5) + "\" font=\"Regular;" + str(fontsize) + "\" halign=\"left\" foregroundColor=\"" + self.textcolor + "\" zPosition=\"2\" noWrap=\"1\" transparent=\"1\" /> \
-			<widget name=\"help_icon\"  position=\"20,70\" size=\"53,38\" zPosition=\"2\" pixmap=\"skin_default/buttons/key_help.png\" alphatest=\"on\" /> \
+			<widget name=\"help_icon\"  position=\"20,70\" size=\"53,38\" zPosition=\"2\" pixmap=\"/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png\" alphatest=\"on\" /> \
 			</screen>"
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
@@ -1620,7 +1620,7 @@ class SatPanel(Screen, HelpableScreen):
 					<ePixmap position="160,460" size="35,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
 					<ePixmap position="300,460" size="35,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
 					<ePixmap position="460,460" size="35,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-					<ePixmap position="595,485" size="35,25" pixmap="skin_default/buttons/key_help.png" transparent="1" alphatest="on" />
+					<ePixmap position="590,481" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
 				</screen>"""
 		else:
 			self.skin = """
@@ -1850,7 +1850,7 @@ class SatPanelb(Screen, HelpableScreen):
 			self.skin = """
 				<screen name="SatPanelb" position="center,center" size="620,500" backgroundColor="#40000000" resolution="1280,720" >
 					<widget name="Mlist" position="10,10" size="600,430" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
-					<ePixmap position="585,475" size="35,25" pixmap="skin_default/buttons/key_help.png" transparent="1" alphatest="on" />
+					<ePixmap position="580,469" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
 				</screen>"""
 		else:
 			self.skin = """
