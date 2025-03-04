@@ -1,4 +1,4 @@
-VERSION = "4.0.3"
+VERSION = "4.0.4"
 #-------------------------------------------------------
 #              Foreca Weather Forecast E2
 #   This Plugin retrieves the actual weather forecast
@@ -98,14 +98,7 @@ VERSION = "4.0.3"
 # 4.0.1 baseurl -> from 'foreca.ba' to 'foreca.nz'
 # 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file, thanx to Lululla
 # 4.0.3 Added search city, messagebox & city name to PicView, thanx to Lululla
-# To do:
-#	Add 10 day forecast on green key press
-#	City search at Foreca website on yellow key press. This will eliminate complete city DB.
-#	Option to add unlimited cities to a favorite list and to manage this favorite list (add & delete city, sort list).
-#	Show home city (first entry of favorite list) on OK key press.
-#	Skip to next/previous favorite city on left/right arrow key.
-#	Show weather videos and maps on blue key
-#	Show setup menu on Menu key
+# 4.0.4 Feels like colors follow feels like temperature
 
 # for localized messages
 from . import _, file_baseurl
@@ -454,6 +447,41 @@ class MainMenuList(MenuList):
 		else:
 			self.tempcolor = violet
 
+		fltemp = self.x[6]
+		fltemp = fltemp.replace("Feels Like:", "")
+		fltemp = fltemp.replace("&deg;", "")
+		fltemp = fltemp.strip()
+
+		if config.plugins.foreca.units.value == "us":
+			self.flcentigrades = round((int(fltemp) - 32) / 1.8)
+			tempUnit = "°F"
+		else:
+			self.flcentigrades = int(fltemp)
+		if self.flcentigrades <= -20:
+			self.fltempcolor = ddblau
+		elif self.flcentigrades <= -15:
+			self.fltempcolor = dblau
+		elif self.flcentigrades <= -10:
+			self.fltempcolor = mblau
+		elif self.flcentigrades <= -5:
+			self.fltempcolor = blau
+		elif self.flcentigrades <= 0:
+			self.fltempcolor = hblau
+		elif self.flcentigrades < 5:
+			self.fltempcolor = dgruen
+		elif self.flcentigrades < 10:
+			self.fltempcolor = gruen
+		elif self.flcentigrades < 15:
+			self.fltempcolor = gelb
+		elif self.flcentigrades < 20:
+			self.fltempcolor = orange
+		elif self.flcentigrades < 25:
+			self.fltempcolor = rot
+		elif self.flcentigrades < 30:
+			self.fltempcolor = drot
+		else:
+			self.fltempcolor = violet
+
 		# Time
 		x, y, w, h = self.valTime
 		self.res.append(MultiContentEntryText(pos=(x, y), size=(w, h), font=0, text=self.x[1], color=weiss, color_sel=weiss))
@@ -489,7 +517,7 @@ class MainMenuList(MenuList):
 		textsechs = self.x[6]
 		textsechs = textsechs.replace("&deg;", "") + tempUnit
 		textsechs = textsechs.replace("Feels Like:", _("Feels like:"))
-		self.res.append(MultiContentEntryText(pos=(x, y), size=(w, h), font=2, text=textsechs, color=mblau, color_sel=mblau))
+		self.res.append(MultiContentEntryText(pos=(x, y), size=(w, h), font=2, text=textsechs, color=self.fltempcolor, color_sel=self.fltempcolor))
 		x, y, w, h = self.valText3
 		textsechs = self.x[7]
 		textsechs = textsechs.replace("Precip chance:", _("Precip chance:"))
