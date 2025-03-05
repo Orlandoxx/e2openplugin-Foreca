@@ -1766,6 +1766,7 @@ class SatPanel(Screen, HelpableScreen):
 			(_("Latvia"), 'lettland'),
 			(_("Luxembourg"), 'luxemburg'),
 			(_("Netherlands"), 'niederlande'),
+			(_("Norway"), 'norwegen'),
 			(_("Poland"), 'polen'),
 			(_("Portugal"), 'portugal'),
 			(_("Russia"), 'russland'),
