@@ -848,7 +848,7 @@ class ForecaPreview(Screen, HelpableScreen):
 		self.StartPage()
 
 	def info(self):
-		message = str("%s" % (_("Base URL : %s\n\n") % BASEURL))
+		message = str("%s" % (_("Base URL : %s\n") % BASEURL))
 		message += _("VERSION = %s\n\n") % VERSION
 		message += _("< > = Prognosis next/previous day\n")
 		message += _("0 - 9 = Prognosis (x) days from now\n\n")
