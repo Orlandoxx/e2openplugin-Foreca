@@ -1,4 +1,4 @@
-VERSION = "4.0.4"
+VERSION = "4.0.5"
 #-------------------------------------------------------
 #              Foreca Weather Forecast E2
 #   This Plugin retrieves the actual weather forecast
@@ -99,6 +99,7 @@ VERSION = "4.0.4"
 # 4.0.2 baseurl from Orlandoxx's GitHub's baseurl.txt file, thanx to Lululla
 # 4.0.3 Added search city, messagebox & city name to PicView, thanx to Lululla
 # 4.0.4 Feels like colors follow feels like temperature
+# 4.0.5 Let Enigma take care of the skins scaling
 
 # for localized messages
 from . import _, file_baseurl
@@ -212,7 +213,6 @@ if not exists(USR_PATH):
 # Get screen size
 size_w = getDesktop(0).size().width()
 size_h = getDesktop(0).size().height()
-HD = False if size_w < 1280 else True
 
 # Get diacritics to handle
 FILTERin = []
@@ -548,7 +548,7 @@ class MainMenuList(MenuList):
 
 class ForecaPreviewCache(Screen):
 	skin = """
-		<screen position="center,center" size="76,76" flags="wfNoBorder" backgroundColor="#000000" resolution="1280,720" >
+		<screen position="center,center" size="76,76" flags="wfNoBorder" backgroundColor="#000000" resolution="1920,1080" >
 			<widget name="spinner" position="14,14" zPosition="4" size="48,48" alphatest="on" />
 		</screen>"""
 
@@ -612,49 +612,29 @@ class ForecaPreview(Screen, HelpableScreen):
 		# https://www.foreca.ba/Germany/Berlin
 		MAIN_PAGE = f"{BASEURL}{pathname2url(self.ort)}?lang={LANGUAGE}&details={heute}&units={config.plugins.foreca.units.value}&tf={config.plugins.foreca.time.value}"
 		FAlog("initial link:", MAIN_PAGE)
-		if HD:
-			self.skin = """
-				<screen name="ForecaPreview" position="center,center" size="980,590" title="Foreca Weather Forecast" backgroundColor="#00000000" resolution="1280,720">
-					<widget name="MainList" position="0,73" size="980,470" zPosition="3" backgroundColor="#00000000" enableWrapAround="1" scrollbarMode="showOnDemand" />
-					<widget source="Titel" render="Label" position="4,4" zPosition="3" size="978,60" font="Regular;24" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
-					<widget source="Titel2" render="Label" position="35,4" zPosition="2" size="900,30" font="Regular;26" valign="center" halign="center" transparent="1" foregroundColor="#f47d19"/>
-					<eLabel position="5,68" zPosition="2" size="970,2" foregroundColor="#c3c3c9" backgroundColor="#FFFFFF" />
-					<eLabel position="5,550" zPosition="2" size="970,2" foregroundColor="#c3c3c9" backgroundColor="#FFFFFF" />
-					<widget source="key_red" render="Label" position="39,553" zPosition="2" size="102,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_green" render="Label" position="177,553" zPosition="2" size="110,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_yellow" render="Label" position="325,553" zPosition="2" size="110,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_blue" render="Label" position="473,553" zPosition="2" size="110,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_ok" render="Label" position="621,553" zPosition="2" size="70,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_menu" render="Label" position="729,553" zPosition="2" size="85,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_info" render="Label" position="852,553" zPosition="2" size="85,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<ePixmap position="2,560" size="36,25" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
-					<ePixmap position="140,560" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
-					<ePixmap position="288,560" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
-					<ePixmap position="436,560" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-					<ePixmap position="581,558" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
-					<ePixmap position="692,560" size="36,25" pixmap="skin_default/buttons/key_menu.png" transparent="1" alphatest="on" />
-					<ePixmap position="815,560" size="36,25" pixmap="skin_default/buttons/key_info.png" transparent="1" alphatest="on" />
-					<ePixmap position="938,558" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
-				</screen>"""
-		else:
-			self.skin = """
-				<screen name="ForecaPreview" position="center,65" size="720,480" title="Foreca Weather Forecast" backgroundColor="#00000000" resolution="1280,720" >
-					<widget name="MainList" position="0,65" size="720,363" zPosition="3" backgroundColor="#00000000" enableWrapAround="1" scrollbarMode="showOnDemand" />
-					<widget source="Titel" render="Label" position="20,3" zPosition="3" size="680,50" font="Regular;20" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
-					<widget source="Titel2" render="Label" position="40,5" zPosition="2" size="640,50" font="Regular;22" valign="center" halign="center" transparent="1" foregroundColor="#f47d19"/>
-					<eLabel position="5,55" zPosition="2" size="710,2" foregroundColor="#c3c3c9" backgroundColor="#FFFFFF" />
-					<eLabel position="5,437" zPosition="2" size="710,2" foregroundColor="#c3c3c9" backgroundColor="#FFFFFF" />
-					<widget source="key_red" render="Label" position="50,438" zPosition="2" size="120,40" font="Regular;20" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
-					<widget source="key_green" render="Label" position="210,438" zPosition="2" size="100,40" font="Regular;20" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
-					<widget source="key_yellow" render="Label" position="350,438" zPosition="2" size="100,40" font="Regular;20" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
-					<widget source="key_blue" render="Label" position="490,438" zPosition="2" size="100,40" font="Regular;20" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
-					<widget source="key_ok" render="Label" position="630,438" zPosition="2" size="100,40" font="Regular;20" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
-					<ePixmap position="10,442" size="36,25" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
-					<ePixmap position="170,442" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
-					<ePixmap position="310,442" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
-					<ePixmap position="450,442" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-					<ePixmap position="590,442" size="36,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
-				</screen>"""
+		self.skin = """
+			<screen name="ForecaPreview" position="center,center" size="980,590" title="Foreca Weather Forecast" backgroundColor="#00000000" resolution="1920,1080">
+				<widget name="MainList" position="0,73" size="980,470" zPosition="3" backgroundColor="#00000000" enableWrapAround="1" scrollbarMode="showOnDemand" />
+				<widget source="Titel" render="Label" position="4,4" zPosition="3" size="978,60" font="Regular;24" valign="center" halign="left" transparent="1" foregroundColor="#ffffff"/>
+				<widget source="Titel2" render="Label" position="35,4" zPosition="2" size="900,30" font="Regular;26" valign="center" halign="center" transparent="1" foregroundColor="#f47d19"/>
+				<eLabel position="5,68" zPosition="2" size="970,2" foregroundColor="#c3c3c9" backgroundColor="#FFFFFF" />
+				<eLabel position="5,550" zPosition="2" size="970,2" foregroundColor="#c3c3c9" backgroundColor="#FFFFFF" />
+				<widget source="key_red" render="Label" position="39,553" zPosition="2" size="102,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<widget source="key_green" render="Label" position="177,553" zPosition="2" size="110,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<widget source="key_yellow" render="Label" position="325,553" zPosition="2" size="110,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<widget source="key_blue" render="Label" position="473,553" zPosition="2" size="110,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<widget source="key_ok" render="Label" position="621,553" zPosition="2" size="70,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<widget source="key_menu" render="Label" position="729,553" zPosition="2" size="85,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<widget source="key_info" render="Label" position="852,553" zPosition="2" size="85,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
+				<ePixmap position="2,560" size="36,25" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
+				<ePixmap position="140,560" size="36,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
+				<ePixmap position="288,560" size="36,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="436,560" size="36,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
+				<ePixmap position="581,558" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_ok.png" transparent="1" alphatest="on" />
+				<ePixmap position="692,560" size="36,25" pixmap="skin_default/buttons/key_menu.png" transparent="1" alphatest="on" />
+				<ePixmap position="815,560" size="36,25" pixmap="skin_default/buttons/key_info.png" transparent="1" alphatest="on" />
+				<ePixmap position="938,558" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
+			</screen>"""
 		Screen.__init__(self, session)
 		self.setup_title = _("Foreca Weather Forecast")
 		self["MainList"] = MainMenuList()
@@ -1123,7 +1103,7 @@ class CityPanel(Screen, HelpableScreen):
 	def __init__(self, session, panelmenu):
 		self.session = session
 		self.skin = """
-			<screen name="CityPanel" position="center,60" size="800,500" title="Select a city" backgroundColor="#40000000" resolution="1280,720" >
+			<screen name="CityPanel" position="center,60" size="800,500" title="Select a city" backgroundColor="#40000000" resolution="1920,1080" >
 				<widget name="Mlist" position="10,10" size="790,450" zPosition="3" backgroundColor="#40000000" backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
 				<eLabel position="0,465" zPosition="2" size="800,2" foregroundColor="#c3c3c9" backgroundColor="#c1cdc1" />
 				<widget source="key_red" render="Label" position="40,470" zPosition="2" size="140,30" font="Regular;20" valign="center" halign="left" transparent="1" />
@@ -1329,9 +1309,8 @@ class CityPanel(Screen, HelpableScreen):
 
 
 class SatPanelList(MenuList):
-	ItemSkin = 143 if HD else 123
 
-	def __init__(self, list, font0=28, font1=16, itemHeight=ItemSkin, enableWrapAround=True):
+	def __init__(self, list, font0=28, font1=16, itemHeight=143, enableWrapAround=True):
 		MenuList.__init__(self, [], False, eListboxPythonMultiContent)
 		GUIComponent.__init__(self)
 		self.font0 = gFont("Regular", font0)
@@ -1635,35 +1614,20 @@ class SatPanel(Screen, HelpableScreen):
 	def __init__(self, session, ort):
 		self.session = session
 		self.ort = ort
-		if HD:
-			self.skin = """
-				<screen name="SatPanel" position="center,center" size="630,510" title="Satellite photos" backgroundColor="#40000000" resolution="1280,720" >
-					<widget name="Mlist" position="10,10" size="600,430" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
-					<eLabel position="0,445" zPosition="2" size="630,1" backgroundColor="#c1cdc1" />
-					<widget source="key_red" render="Label" position="40,450" zPosition="2" size="124,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<widget source="key_green" render="Label" position="198,450" zPosition="2" size="140,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<widget source="key_yellow" render="Label" position="338,450" zPosition="2" size="140,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<widget source="key_blue" render="Label" position="498,450" zPosition="2" size="142,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<ePixmap position="2,460" size="35,25" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
-					<ePixmap position="160,460" size="35,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
-					<ePixmap position="300,460" size="35,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
-					<ePixmap position="460,460" size="35,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-					<ePixmap position="590,481" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
-				</screen>"""
-		else:
-			self.skin = """
-				<screen name="SatPanel" position="center,center" size="630,440" title="Satellite photos" backgroundColor="#40000000" resolution="1280,720" >
-					<widget name="Mlist" position="10,10" size="600,370" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
-					<eLabel position="0,385" zPosition="2" size="630,1" backgroundColor="#c1cdc1" />
-					<widget source="key_red" render="Label" position="40,397" zPosition="2" size="124,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<widget source="key_green" render="Label" position="198,397" zPosition="2" size="140,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<widget source="key_yellow" render="Label" position="338,397" zPosition="2" size="140,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<widget source="key_blue" render="Label" position="498,397" zPosition="2" size="142,45" font="Regular;20" valign="center" halign="left" transparent="1" />
-					<ePixmap position="2,400" size="36,20" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
-					<ePixmap position="160,400" size="36,20" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
-					<ePixmap position="300,400" size="36,20" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
-					<ePixmap position="460,400" size="36,20" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
-				</screen>"""
+		self.skin = """
+			<screen name="SatPanel" position="center,center" size="630,510" title="Satellite photos" backgroundColor="#40000000" resolution="1920,1080" >
+				<widget name="Mlist" position="10,10" size="600,430" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
+				<eLabel position="0,445" zPosition="2" size="630,1" backgroundColor="#c1cdc1" />
+				<widget source="key_red" render="Label" position="40,450" zPosition="2" size="124,45" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_green" render="Label" position="198,450" zPosition="2" size="140,45" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_yellow" render="Label" position="338,450" zPosition="2" size="140,45" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<widget source="key_blue" render="Label" position="498,450" zPosition="2" size="142,45" font="Regular;20" valign="center" halign="left" transparent="1" />
+				<ePixmap position="2,460" size="35,25" pixmap="skin_default/buttons/key_red.png" transparent="1" alphatest="on" />
+				<ePixmap position="160,460" size="35,25" pixmap="skin_default/buttons/key_green.png" transparent="1" alphatest="on" />
+				<ePixmap position="300,460" size="35,25" pixmap="skin_default/buttons/key_yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="460,460" size="35,25" pixmap="skin_default/buttons/key_blue.png" transparent="1" alphatest="on" />
+				<ePixmap position="590,481" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
+			</screen>"""
 		Screen.__init__(self, session)
 		self.setup_title = _("Satellite photos")
 		self["Mlist"] = SatPanelList([])
@@ -1840,9 +1804,8 @@ class SatPanel(Screen, HelpableScreen):
 
 
 class SatPanelListb(MenuList):
-	ItemSkin = 143 if HD else 123
 
-	def __init__(self, list, font0=24, font1=16, itemHeight=ItemSkin, enableWrapAround=True):
+	def __init__(self, list, font0=24, font1=16, itemHeight=143, enableWrapAround=True):
 		MenuList.__init__(self, [], False, eListboxPythonMultiContent)
 		self.font0 = gFont("Regular", font0)
 		self.font1 = gFont("Regular", font1)
@@ -1875,17 +1838,11 @@ class SatPanelb(Screen, HelpableScreen):
 	def __init__(self, session, ort, title, mlist):
 		self.session = session
 		self.ort = ort
-		if HD:
-			self.skin = """
-				<screen name="SatPanelb" position="center,center" size="620,500" backgroundColor="#40000000" resolution="1280,720" >
-					<widget name="Mlist" position="10,10" size="600,430" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
-					<ePixmap position="580,469" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
-				</screen>"""
-		else:
-			self.skin = """
-				<screen name="SatPanelb" position="center,center" size="620,440" backgroundColor="#40000000" resolution="1280,720" >
-					<widget name="Mlist" position="10,10" size="600,370" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
-				</screen>"""
+		self.skin = """
+			<screen name="SatPanelb" position="center,center" size="620,500" backgroundColor="#40000000" resolution="1920,1080" >
+				<widget name="Mlist" position="10,10" size="600,430" zPosition="3" backgroundColor="#40000000"  backgroundColorSelected="#565656" enableWrapAround="1" scrollbarMode="showOnDemand" />
+				<ePixmap position="580,469" size="40,29" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Foreca/buttons/key_help.png" transparent="1" alphatest="on" />
+			</screen>"""
 		Screen.__init__(self, session)
 		self.setup_title = title
 		self.Mlist = mlist
@@ -2019,7 +1976,7 @@ class PicView(Screen):
 
 class PicSetup(Screen):
 	skin = """
-		<screen name="PicSetup" position="center,center" size="660,330" title= "SlideShow Settings" backgroundColor="#000000" resolution="1280,720" >
+		<screen name="PicSetup" position="center,center" size="660,330" title= "SlideShow Settings" backgroundColor="#000000" resolution="1920,1080" >
 			<widget name="Mlist" position="5,5" size="650,280" backgroundColor="#000000" enableWrapAround="1" scrollbarMode="showOnDemand" />
 			<widget source="key_red" render="Label" position="50,290" zPosition="2" size="150,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
 			<widget source="key_green" render="Label" position="285,290" zPosition="2" size="150,40" font="Regular;18" valign="center" halign="left" transparent="1" foregroundColor="#ffffff" />
